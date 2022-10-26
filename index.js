@@ -25,7 +25,7 @@ app.set('view engine', 'ejs')
 app.get("/", async (req, res) => {
   const workouts = await Workout.find({})
   console.log(workouts)
-  res.send("Yeah I did it !")
+  res.render("home")
 })
 
 app.listen(3201, () => {
