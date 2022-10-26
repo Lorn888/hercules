@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const workout = require('./models/workout')
+const Workout = require('./models/workout')
 
 const mongoose = require('mongoose');
 const port = process.env.PORT || 5000;
@@ -21,6 +21,12 @@ connection.once('open', () => {
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
+
+app.get("/", async (req, res) => {
+  const workouts = await Workout.find({})
+  console.log(workouts)
+  res.send("Yeah I did it !")
+})
 
 app.listen(3201, () => {
     console.log('Port is working :)')
