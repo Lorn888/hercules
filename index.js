@@ -25,7 +25,7 @@ app.set('view engine', 'ejs')
 app.get("/", async (req, res) => {
   const workouts = await Workout.find({})
   console.log(workouts)
-  res.render("home")
+  res.render("home", {workouts})
 })
 
 app.listen(3201, () => {
