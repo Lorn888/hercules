@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,15 @@
   },
   "homepage": "https://github.com/Lorn888/hercules#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "mongoose": "^6.7.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.20"
   }
 }
